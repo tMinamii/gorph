@@ -1,4 +1,4 @@
-package goan
+package gorph
 
 type Word struct {
 	SurfaceForm       string // 表層形
@@ -16,6 +16,17 @@ type Word struct {
 	Pronunciation     string // 発音
 }
 
+var words = []string{
+	"プリン",
+	"プリン体",
+	"プディング",
+	"プリニー",
+	"プリンセス",
+	"プリティ",
+	"プラージ",
+	"プルミエール",
+}
+
 type Dict struct {
 	MaxLength int
 	TrieTree  *Trie
@@ -28,6 +39,21 @@ type Trie struct {
 }
 
 type DoubleArray struct {
-	Base  []int // 添字をズラす量
-	Check []int
+	Base  []int // 添字をズラす量,葉ノードの場合はずらす量の代わりに単語に対応する値(単語ID)
+	Check []int // 親のID(遷移元)
+}
+
+func (d *DoubleArray) NewDoubleArray() {
+	d.Base = []int{1}
+	d.Check = []int{0}
+}
+
+func (d *DoubleArray) Build(word string) {
+	for _, c := range word {
+		d.Base[s] + d.Code(c)
+	}
+}
+
+func (d *DoubleArray) Code(r rune) {
+
 }

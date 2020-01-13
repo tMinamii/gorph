@@ -1,4 +1,4 @@
-go-moph is Japanese Morphological analyzer in golang.
+gorph is Japanese Morphological analyzer witten in Go.
 
 ===
 
