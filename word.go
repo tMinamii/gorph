@@ -27,33 +27,22 @@ var words = []string{
 	"プルミエール",
 }
 
+var w1 = []string{
+	"a",
+	"ac",
+	"b",
+	"cab",
+	"cd",
+}
+
 type Dict struct {
 	MaxLength int
 	TrieTree  *Trie
 }
 
+// メモリ効率は、あまり考えずトライ木を抽象的に実装する
 type Trie struct {
 	Rune rune
 	Word *Word
 	Next map[rune]*Trie
-}
-
-type DoubleArray struct {
-	Base  []int // 添字をズラす量,葉ノードの場合はずらす量の代わりに単語に対応する値(単語ID)
-	Check []int // 親のID(遷移元)
-}
-
-func (d *DoubleArray) NewDoubleArray() {
-	d.Base = []int{1}
-	d.Check = []int{0}
-}
-
-func (d *DoubleArray) Build(word string) {
-	for _, c := range word {
-		d.Base[s] + d.Code(c)
-	}
-}
-
-func (d *DoubleArray) Code(r rune) {
-
 }
